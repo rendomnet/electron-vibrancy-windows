@@ -19,8 +19,6 @@ or
 npm install https://github.com/DrunkWinter/electron-vibrancy-windows
 ```
 
-Since this is a native addon, you will need platforms build tools. Like Visual Studio, etc. Also Python for `node-gyp`.
-
 ## Important
 - `BrowserWindow` must be transparent. (`transparent:true`)
 - If you get `A dynamic link library (DLL) initialization routine failed.` error, it means that the module isn't compiled against Electron or compiled against the wrong version. 
