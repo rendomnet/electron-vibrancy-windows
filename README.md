@@ -1,9 +1,6 @@
 # electron-vibrancy
 
-![](https://img.shields.io/npm/dm/electron-vibrancy.svg)
-![](https://david-dm.org/arkenthera/electron-vibrancy/status.svg)
-
-# As of [#7898](https://github.com/electron/electron/pull/7898) Vibrancy is now supported in Electron for *macOS*.
+## As of [#7898](https://github.com/electron/electron/pull/7898) Vibrancy is now supported in Electron for *macOS*.
 
 This module is intended to give an [Electron](https://github.com/electron/electron) BrowserWindow blur on its behind. Electron does not support 'blur behind' from a transparent window and this module uses native API calls to achieve the effect.
 
@@ -11,7 +8,7 @@ This module is intended to give an [Electron](https://github.com/electron/electr
 
 ![](http://i.imgur.com/42jOnRV.png)
 
-# Running
+## Running
 
 Since this is a native addon, you will need your platforms build tools. Visual Studio,XCode etc.Also Python for `node-gyp`.
 
@@ -23,13 +20,13 @@ npm run rebuild
 ```
 
 
-# Current Supported Platforms
+## Current Supported Platforms
 - macOS 10.10+
 - Windows 10 (stable) It just works ™
 - Windows 8.x (unstable + requires modifications)
 - Windows 7 (unstable + requires modifications)
 
-# Things to note
+## Things to note
 - `BrowserWindow` must be transparent. (`transparent:true`)
 - Requires Yosemite on macOS.
 - On Windows 8.x, this wont work because Microsoft completely removed Aero Glass feature. It is still possible though but it is not something that an end user should do.
@@ -39,7 +36,7 @@ See Platforms section for more info.
 
 Although it works, I dont recommend using this module on a machine below Windows 10. See platforms section below for more information for macOS.
 
-# API
+## API
 There are several methods depending on what you want to do and what platform you are on.
 
 ### `SetVibrancy(window, material)` _win_ , _macOS_
