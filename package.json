@@ -13,7 +13,6 @@
   },
   "scripts": {
     "build": "node-gyp rebuild",
-    "rebuild": "node-gyp rebuild",
     "install": "node-gyp rebuild"
   },
   "keywords": [
