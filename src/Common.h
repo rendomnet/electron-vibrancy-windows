@@ -34,13 +34,6 @@
 #if defined(_MSC_VER)
 #define PLATFORM_WIN32
 #include <dwmapi.h>
-#elif defined(__linux__)
-#define PLATFORM_LINUX
-#elif defined(__APPLE__)
-#define PLATFORM_OSX
-#import <Foundation/Foundation.h>
-#import <AppKit/AppKit.h>
-#import <objc/objc-runtime.h>
 #endif
 
 #include <map>
