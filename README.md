@@ -18,14 +18,6 @@ This module is intended to give an [Electron](https://github.com/electron/electr
 
 Since this is a native addon, you will need your platforms build tools. Visual Studio,XCode etc.Also Python for `node-gyp`.
 
-```
-git clone https://github.com/arkenthera/electron-vibrancy
-cd electron-vibrancy
-npm install
-cd spec/app # Go to sample app
-electron . # electron --version should be 1.6.8
-```
-
 To rebuild again:
 
 ```
@@ -39,7 +31,6 @@ Also available through NPM.
 npm install electron-vibrancy
 ```
 
-To run tests see [scripts/ci](https://github.com/arkenthera/electron-vibrancy/blob/master/scripts/ci.sh)
 
 # Current Supported Platforms
 - macOS 10.10+

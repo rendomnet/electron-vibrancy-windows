@@ -69,6 +69,8 @@ namespace Vibrancy {
     }
 
     NAN_METHOD(Vibrancy::SetVibrancy) {
+        
+
         v8::Local<v8::Object> toggleStateObj =
             info[0].As<v8::Object>();
         v8::Local<v8::Object> handleBuffer =
@@ -83,7 +85,7 @@ namespace Vibrancy {
         if (handleBuffer->IsNull())
             return;
 
-        bool toggleState = toggleStateObj->BooleanValue();
+        bool toggleState = toggleStateObj->BooleanValue(isolate);
 
         char* bufferData = node::Buffer::Data(handleBuffer);
 
