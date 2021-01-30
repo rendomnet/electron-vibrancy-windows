@@ -13,8 +13,8 @@
   },
   "scripts": {
     "build": "node-gyp rebuild",
-    "install": "node-gyp rebuild",
-    "postinstall": "node-gyp rebuild"
+    "rebuild": "node-gyp rebuild",
+    "install": "node-gyp rebuild"
   },
   "keywords": [
     "electron",
