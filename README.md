@@ -1,8 +1,5 @@
-#electron-vibrancy
+# electron-vibrancy
 
-[![Build Status](https://travis-ci.org/arkenthera/electron-vibrancy.svg?branch=master)](https://travis-ci.org/arkenthera/electron-vibrancy)
-[![Build status](https://ci.appveyor.com/api/projects/status/41na3l88kgs8wir1?svg=true)](https://ci.appveyor.com/project/arkenthera/electron-vibrancy)
-[![npm version](https://badge.fury.io/js/electron-vibrancy.svg)](https://badge.fury.io/js/electron-vibrancy)
 ![](https://img.shields.io/npm/dm/electron-vibrancy.svg)
 ![](https://david-dm.org/arkenthera/electron-vibrancy/status.svg)
 
@@ -23,12 +20,6 @@ To rebuild again:
 ```
 npm run conf
 npm run rebuild
-```
-
-Also available through NPM.
-
-```
-npm install electron-vibrancy
 ```
 
 
