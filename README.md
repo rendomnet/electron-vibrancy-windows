@@ -6,13 +6,13 @@ This module uses native API calls to achieve the blur effect on an [Electron](ht
 
 ## Running
 
-Since this is a native addon, you will need your platforms build tools. Like Visual Studio, etc. Also Python for `node-gyp`.
+Since this is a native addon, you will need platforms build tools. Like Visual Studio, etc. Also Python for `node-gyp`.
 
-## Things to note
+## Important
 - `BrowserWindow` must be transparent. (`transparent:true`)
 - If you get `A dynamic link library (DLL) initialization routine failed.` error, it means that the module isn't compiled against Electron or compiled against the wrong version. 
 
-Although it works, I dont recommend using this module on a machine below Windows 10.
+Although it might works, it is not recommended using this module on a machine older than Windows 10.
 
 ## How to use
 
@@ -33,7 +33,7 @@ function createWindow() {
         }
     });
 
-    vibrancy.SetVibrancy(mainWindow, 0);
+    vibrancy.SetVibrancy(mainWindow);
 
     mainWindow.loadFile(path.join(__dirname, 'index.html'));
 };
@@ -60,19 +60,9 @@ Disables Vibrancy completely.
 * `window` `BrowserWindow` instance
 
 
-## Screenshots
-
-![](https://cloud.githubusercontent.com/assets/174864/19833319/bc7214f8-9e0b-11e6-8331-be49ca3eeab9.png)
-
-![](https://cloud.githubusercontent.com/assets/174864/19833322/bc7f168a-9e0b-11e6-9c84-c2a746538edc.png)
-
-![](https://cloud.githubusercontent.com/assets/174864/19833327/bc8b2c2c-9e0b-11e6-9272-8d84ad3b7116.png)
-
-
 ## Platform notices
 
-### Windows
-The addon uses ```SetWindowCompositionAttribute```, which is an undocumented API, which means it can be changed by Microsoft any time and break the functionality.
+The addon uses ```SetWindowCompositionAttribute```, which is an undocumented Windows API, which means it can be changed by Microsoft any time and break the functionality.
 
 
 ## License
