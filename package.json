@@ -5,11 +5,11 @@
   "main": "index.js",
   "devDependencies": {
     "electron": "^11.2.1",
-    "node-gyp": "^7.1.2",
-    "nan": "^2.6.2"
+    "node-gyp": "^7.1.2"
   },
   "dependencies": {
-    "bindings": "^1.2.1"
+    "bindings": "^1.2.1",
+    "nan": "^2.6.2"
   },
   "scripts": {
     "build": "node-gyp rebuild",
