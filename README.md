@@ -10,28 +10,22 @@ This module is intended to give an [Electron](https://github.com/electron/electr
 
 ## Running
 
-Since this is a native addon, you will need your platforms build tools. Visual Studio,XCode etc.Also Python for `node-gyp`.
+Since this is a native addon, you will need your platforms build tools. Visual Studio, XCode etc. Also Python for `node-gyp`.
 
 To rebuild again:
 
 ```
-npm run conf
 npm run rebuild
 ```
 
 
 ## Current Supported Platforms
 - macOS 10.10+
-- Windows 10 (stable) It just works ™
-- Windows 8.x (unstable + requires modifications)
-- Windows 7 (unstable + requires modifications)
+- Windows 10
 
 ## Things to note
 - `BrowserWindow` must be transparent. (`transparent:true`)
 - Requires Yosemite on macOS.
-- On Windows 8.x, this wont work because Microsoft completely removed Aero Glass feature. It is still possible though but it is not something that an end user should do.
-See Platforms section for more info.
-- On Windows 7, an Aero theme must be activated.
 - If you get `A dynamic link library (DLL) initialization routine failed.` error, it means that the module isn't compiled against Electron or compiled against the wrong version. 
 
 Although it works, I dont recommend using this module on a machine below Windows 10. See platforms section below for more information for macOS.
