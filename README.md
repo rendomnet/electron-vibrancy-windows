@@ -44,13 +44,13 @@ app.on('ready', createWindow);
 ## API
 There are several methods depending on what you want to do and what platform you are on.
 
-### `SetVibrancy(window, material)`
+### `SetVibrancy(window)`
 
-Returns `Integer`. View id of `NSVisualEffectView`. You need this for `UpdateView` or `RemoveView`. `material` has no effect on Windows.
+Returns `Integer`.
 
 * `window` `BrowserWindow` instance
 
-Enables or disables vibrancy for the **WHOLE** window. It will resize automatically. If you want something custom, see `AddView`.
+Enables or disables vibrancy for the **WHOLE** window. It will resize automatically.
 
 
 ### `DisableVibrancy(window)`
