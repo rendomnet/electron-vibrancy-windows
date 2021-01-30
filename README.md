@@ -30,6 +30,33 @@ npm run rebuild
 
 Although it works, I dont recommend using this module on a machine below Windows 10. See platforms section below for more information for macOS.
 
+## How to use
+
+```javascript
+const vibrancy = require('electron-vibrancy'); 
+
+function createWindow() {
+ // Create the browser window.
+ const mainWindow = new BrowserWindow({
+  title: 'My App',
+  width: 1200,
+  height: 760,
+  frame: false,
+  center: true,
+  transparent: true,
+  webPreferences: {
+   nodeIntegration: true
+  }
+ });
+
+ vibrancy.SetVibrancy(mainWindow, 0);
+
+ mainWindow.loadFile(path.join(__dirname, 'index.html'));
+};
+
+app.on('ready', createWindow);
+```
+
 ## API
 There are several methods depending on what you want to do and what platform you are on.
 
@@ -105,57 +132,6 @@ Returns `Boolean`.
 * `ViewId`- Integer.Identifier of `NSVisualEffectView`.
 
 Removes the `NSVisualEffectView`.
-
-
-
-## How to use
-
-```
-// Require the module
-var electronVibrancy = require('..');
-electronVibrancy.SetVibrancy(true,browserWindowInstance.getNativeWindowHandle());
-
-
-// Preferred Usage
-
-// mainWindow with show: false
-mainWindow.on('ready-to-show',function() {
-  var electronVibrancy = require('..');
-  
-  // Whole window vibrancy with Material 0 and auto resize
-  electronVibrancy.SetVibrancy(mainWindow, 0);
-
-  // auto resizing vibrant view at {0,0} with size {300,300} with Material 0
-  electronVibrancy.AddView(mainWindow, { Width: 300,Height:300,X:0,Y:0,ResizeMask:2,Material:0 })
-
-  // non-resizing vibrant view at {0,0} with size {300,300} with Material 0
-  electronVibrancy.AddView(mainWindow, { Width: 300,Height:300,X:0,Y:0,ResizeMask:3,Material:0 })
-
-  //Remove a view
-  var viewId = electronVibrancy.SetVibrancy(mainWindow, 0);
-  electronVibrancy.RemoveView(mainWindow,viewId);
-
-  // Add a view then update it
-  var viewId = electronVibrancy.SetVibrancy(mainWindow, 0);
-  electronVibrancy.UpdateView(mainWindow,{ ViewId: viewId,Width: 600, Height: 600 });
-
-  // Multipe views with different materials
-  var viewId1 = electronVibrancy.AddView(mainWindow, { Width: 300,Height:300,X:0,Y:0,ResizeMask:3,Material:0 })
-  var viewId2 = electronVibrancy.AddView(mainWindow, { Width: 300,Height:300,X:300,Y:0,ResizeMask:3,Material:2 })
-
-  console.log(viewId1);
-  console.log(viewId2);
-
-  // electronVibrancy.RemoveView(mainWindow,0);
-  // electronVibrancy.RemoveView(mainWindow,1);
-
-  // or
-
-  electronVibrancy.DisableVibrancy(mainWindow);
-})
-
-```
-
 
 ## Screenshots
 
