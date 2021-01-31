@@ -4,7 +4,6 @@
   "description": "This module uses native API calls to achieve the transparent blur effect on an Electron app.",
   "main": "index.js",
   "devDependencies": {
-    "electron": "^11.2.1",
     "node-gyp": "^7.1.2"
   },
   "dependencies": {
