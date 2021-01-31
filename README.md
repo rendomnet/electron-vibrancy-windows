@@ -1,12 +1,23 @@
 # Electron Vibrancy for Windows
 
+[![Dependencies](https://status.david-dm.org/gh/DrunkWinter/electron-vibrancy-windows.svg)](https://david-dm.org/DrunkWinter/electron-vibrancy-windows)
+
 This module uses native API calls to achieve the blur effect on an [Electron](https://github.com/electron/electron) app.
 
 ![](http://i.imgur.com/0sRPzpn.png)
 
-## Running
+## Installation
+You will need Python, Visual Studio or Visual C++ build tools to install this. An easy way to install them can be found [here](https://www.npmjs.com/package/windows-build-tools).
 
-Since this is a native addon, you will need platforms build tools. Like Visual Studio, etc. Also Python for `node-gyp`.
+```shell script
+yarn add https://github.com/DrunkWinter/electron-vibrancy-windows
+```
+
+or
+
+```shell script
+npm install https://github.com/DrunkWinter/electron-vibrancy-windows
+```
 
 ## Important
 
