@@ -9,10 +9,8 @@ This module uses native API calls to achieve the blur effect on an [Electron](ht
 Since this is a native addon, you will need platforms build tools. Like Visual Studio, etc. Also Python for `node-gyp`.
 
 ## Important
-- `BrowserWindow` must be transparent. (`transparent:true`)
-- If you get `A dynamic link library (DLL) initialization routine failed.` error, it means that the module isn't compiled against Electron or compiled against the wrong version. 
 
-Although it might works, it is not recommended using this module on a machine older than Windows 10.
+Although it might work, it is not recommended using this module on a machine older than Windows 10.
 
 ## How to use
 
@@ -26,14 +24,12 @@ function createWindow() {
         width: 1200,
         height: 760,
         frame: false,
-        center: true,
-        transparent: true,
         webPreferences: {
             nodeIntegration: true
         }
     });
 
-    vibrancy.SetVibrancy(mainWindow);
+    vibrancy.EnableVibrancy(mainWindow);
 
     mainWindow.loadFile(path.join(__dirname, 'index.html'));
 };
@@ -42,20 +38,17 @@ app.on('ready', createWindow);
 ```
 
 ## API
-There are several methods depending on what you want to do and what platform you are on.
 
-### `SetVibrancy(window)`
+### `EnableVibrancy(window)`
 
 Returns `Integer`.
 
 * `window` `BrowserWindow` instance
 
-Enables or disables vibrancy for the **WHOLE** window. It will resize automatically.
-
 
 ### `DisableVibrancy(window)`
 
-Disables Vibrancy completely.
+Returns `Integer`. Disables Vibrancy.
 
 * `window` `BrowserWindow` instance
 
