@@ -23,9 +23,7 @@
 // SOFTWARE.
 //----------------------------------------------------------------------------
 
-
 #include "./VibrancyHelper.h"
-
 
 #pragma comment(lib, "dwmapi.lib")
 
@@ -36,6 +34,7 @@ namespace Vibrancy {
         int nColor;
         int nAnimationId;
     };
+
     struct WINCOMPATTRDATA {
         int nAttribute;
         PVOID pData;
@@ -48,6 +47,8 @@ namespace Vibrancy {
         ACCENT_ENABLE_TRANSPARENTGRADIENT = 2,
         ACCENT_ENABLE_BLURBEHIND = 3
     };
+
+    typedef BOOL(WINAPI*pSetWindowCompositionAttribute)(HWND, WINCOMPATTRDATA*);
 
     bool IsWindows10() {
         OSVERSIONINFOA info;
@@ -65,19 +66,15 @@ namespace Vibrancy {
         if (IsWindows10()) {
             const HINSTANCE hModule = LoadLibrary(TEXT("user32.dll"));
             if (hModule) {
-                typedef BOOL(WINAPI*pSetWindowCompositionAttribute)(HWND,
-                    WINCOMPATTRDATA*);
-                const pSetWindowCompositionAttribute
-                    SetWindowCompositionAttribute =
+                const pSetWindowCompositionAttribute SetWindowCompositionAttribute =
                     (pSetWindowCompositionAttribute)GetProcAddress(
                         hModule,
                         "SetWindowCompositionAttribute");
 
                 // Only works on Win10
                 if (SetWindowCompositionAttribute) {
-                    ACCENTPOLICY policy =
-                        { state ? ACCENT_ENABLE_BLURBEHIND
-                            : ACCENT_DISABLE , 0, 0, 0 };
+                    AccentTypes accent = state ? ACCENT_ENABLE_BLURBEHIND : ACCENT_DISABLE;
+                    ACCENTPOLICY policy = {accent, 0, 0, 0};
                     WINCOMPATTRDATA data = {19, &policy, sizeof(ACCENTPOLICY) };
                     result = SetWindowCompositionAttribute(hwnd, &data);
                 }
@@ -96,14 +93,18 @@ namespace Vibrancy {
 
             // Apply Blur Behind
             hr = DwmEnableBlurBehindWindow(hwnd, &bb);
-            if (SUCCEEDED(hr)) {
+            if (SUCCEEDED(hr))
                 result = true;
-            }
         }
         return result;
     }
 
-    VibrancyHelper::VibrancyHelper() {
+    VibrancyHelper::VibrancyHelper() { }
+
+    bool VibrancyHelper::EnableVibrancy(unsigned char* windowHandleBuffer) {
+        uint32_t handle = *reinterpret_cast<uint32_t*>(windowHandleBuffer);
+        HWND hwnd = (HWND)handle;
+        return SetBlurBehind(hwnd, true);
     }
 
     bool VibrancyHelper::DisableVibrancy(unsigned char* windowHandleBuffer) {
@@ -111,12 +112,4 @@ namespace Vibrancy {
         HWND hwnd = (HWND)handle;
         return SetBlurBehind(hwnd, false);
     }
-
-    int32_t VibrancyHelper::AddView(unsigned char* buffer,
-        v8::Local<v8::Array> options) {
-        uint32_t handle = *reinterpret_cast<uint32_t*>(buffer);
-        HWND hwnd = (HWND)handle;
-        return SetBlurBehind(hwnd, true);
-    }
-
 }  // namespace Vibrancy

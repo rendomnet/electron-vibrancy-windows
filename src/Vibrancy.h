@@ -37,8 +37,7 @@ namespace Vibrancy {
         ~Vibrancy();
 
         static NAN_METHOD(SetVibrancy);
-
-        static NAN_METHOD(AddView);
+        
         VibrancyHelper helper_;
     };
 }  // namespace Vibrancy

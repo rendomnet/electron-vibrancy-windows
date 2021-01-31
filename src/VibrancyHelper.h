@@ -34,8 +34,8 @@ namespace Vibrancy {
      public:
         VibrancyHelper();
         ~VibrancyHelper() { }
+        bool EnableVibrancy(unsigned char* buffer);
         bool DisableVibrancy(unsigned char* buffer);
-        int32_t AddView(unsigned char* buffer, v8::Local<v8::Array> options);
     };
 }  // namespace Vibrancy
 //----------------------------------------------------------------------------
