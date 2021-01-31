@@ -10,13 +10,13 @@ This module uses native API calls to achieve the blur effect on an [Electron](ht
 You will need Python, Visual Studio or Visual C++ build tools to install this. An easy way to install them can be found [here](https://www.npmjs.com/package/windows-build-tools).
 
 ```shell script
-yarn add https://github.com/DrunkWinter/electron-vibrancy-windows
+yarn add DrunkWinter/electron-vibrancy-windows
 ```
 
 or
 
 ```shell script
-npm install https://github.com/DrunkWinter/electron-vibrancy-windows
+npm install DrunkWinter/electron-vibrancy-windows
 ```
 
 ## Important
