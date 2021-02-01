@@ -21,6 +21,11 @@ npm install https://github.com/DrunkWinter/electron-vibrancy-windows
 
 ## Important
 
+Don't forget to specify a transparent backgroundColor!
+```javascript 
+{ backgroundColor: '#00000000' } 
+```
+
 Although it might work, it is not recommended using this module on a machine older than Windows 10.
 
 ## How to use
