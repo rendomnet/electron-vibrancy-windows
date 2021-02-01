@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "javascript"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    default_labels:
+    - "dependencies"
+    - "dependabot"
+    automerged_updates:
+      - match:
+          dependency_type: "all"
+          update_type: "all"
+    version_requirement_updates: "increase_versions"
