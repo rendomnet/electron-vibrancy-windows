@@ -1,6 +1,6 @@
 # Electron Vibrancy for Windows
 
-[![Dependencies](https://img.shields.io/david/DrunkWinter/electron-vibrancy-windows)](https://david-dm.org/DrunkWinter/electron-vibrancy-windows)
+[![Dependencies](https://status.david-dm.org/gh/DrunkWinter/electron-vibrancy-windows.svg)](https://david-dm.org/DrunkWinter/electron-vibrancy-windows)
 
 This module uses native API calls to achieve the blur effect on an [Electron](https://github.com/electron/electron) app.
 
