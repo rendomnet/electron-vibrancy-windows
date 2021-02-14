@@ -22,8 +22,5 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@v2
 
-      - name: Install dependencies
+      - name: Install dependencies & build
         run: yarn
-      
-      - name: Build
-        run: yarn build
